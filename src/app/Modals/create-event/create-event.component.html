@@ -1,0 +1,275 @@
+<!-- <form #frm="ngForm" (ngSubmit)="validation1(frm.value)">
+            
+    <div>
+      <label class="font-weight-bold">From Pick Up date</label>
+        <input type="date" name="fromDate" max="3000-12-31" 
+             min="1000-01-01" class="form-control" ngModel required>
+      <small id="emailHelp" class="invalid-feedback">Field can't be empty</small>
+    </div>
+    <br>
+    <div>
+      <label class="font-weight-bold">To Pick Up date</label>
+        <input type="date" name="toDate" max="3000-12-31" 
+             min="1000-01-01" class="form-control" ngModel required>
+      <small id="emailHelp" class="invalid-feedback">Field can't be empty</small>
+    </div>
+    <br>
+    <div class="form-group">
+      <button type="submit" style="margin-right:10px" class="btn btn-success" [disabled]="frm.invalid">List</button>
+      <button type="reset" style="margin-right:10px" class="btn btn-success" (click)="frm.reset()">Clear</button>
+    </div>
+</form> -->
+<mat-icon aria-label="schedule" class="clear" style="float:right;cursor: pointer;" (click)="hideModel()">clear</mat-icon>
+<mat-dialog-content style="height:600px">
+  <form #schedule="ngForm" (ngSubmit)="validation(schedule.value)">
+    <input matInput placeholder="Add Title" name="title" ngModal required>
+    <br>
+    <br>
+    <button mat-button mat-button color="primary">Event</button>
+    <button mat-button mat-button color="primary">Recurrence</button>
+    <br>
+    <!-- schedule time and data -->
+    <div class="row">
+      <div class="col-sm-2">
+        <mat-icon aria-label="schedule" class="icon">schedule</mat-icon>
+      </div>
+      <div class="col-sm-3">
+        <button mat-button (click)="picker.open()"><p>{{showDate}}</p></button>
+        <input matInput [matDatepicker]="picker" [hidden] [(ngModel)]="startDate" name="startDate" (change)="selectDate()" >
+        <mat-datepicker #picker></mat-datepicker>
+      </div>
+      <div class="col-sm-2">
+        <!-- <button id="startTime" mat-button [matMenuTriggerFor]="startTime">Start Time</button>
+        <mat-menu #startTime="matMenu" name="startTime">
+          <button mat-menu-item>12:00 AM</button>
+          <button mat-menu-item>12:30 AM</button>
+          <button mat-menu-item>01:00 AM</button>
+          <button mat-menu-item>01:30 AM</button>
+          <button mat-menu-item>02:00 AM</button>
+          <button mat-menu-item>02:30 AM</button>
+          <button mat-menu-item>03:00 AM</button>
+          <button mat-menu-item>03:30 AM</button>
+          <button mat-menu-item>04:00 AM</button>
+          <button mat-menu-item>04:30 AM</button>
+          <button mat-menu-item>05:00 AM</button>
+          <button mat-menu-item>05:30 AM</button>
+          <button mat-menu-item>06:00 AM</button>
+          <button mat-menu-item>06:30 AM</button>
+          <button mat-menu-item>07:00 AM</button>
+          <button mat-menu-item>07:30 AM</button>
+          <button mat-menu-item>08:00 AM</button>
+          <button mat-menu-item>08:30 AM</button>
+          <button mat-menu-item>09:00 AM</button>
+          <button mat-menu-item>09:30 AM</button>
+          <button mat-menu-item>10:00 AM</button>
+          <button mat-menu-item>10:30 AM</button>
+          <button mat-menu-item>11:00 AM</button>
+          <button mat-menu-item>11:30 AM</button>
+          <button mat-menu-item>12:00 PM</button>
+          <button mat-menu-item>12:30 PM</button>
+          <button mat-menu-item>01:00 PM</button>
+          <button mat-menu-item>01:30 PM</button>
+          <button mat-menu-item>02:00 PM</button>
+          <button mat-menu-item>02:30 PM</button>
+          <button mat-menu-item>03:00 PM</button>
+          <button mat-menu-item>03:30 PM</button>
+          <button mat-menu-item>04:00 PM</button>
+          <button mat-menu-item>04:30 PM</button>
+          <button mat-menu-item>05:00 PM</button>
+          <button mat-menu-item>05:30 PM</button>
+          <button mat-menu-item>06:00 PM</button>
+          <button mat-menu-item>06:30 PM</button>
+          <button mat-menu-item>07:00 PM</button>
+          <button mat-menu-item>07:30 PM</button>
+          <button mat-menu-item>08:00 PM</button>
+          <button mat-menu-item>08:30 PM</button>
+          <button mat-menu-item>09:00 PM</button>
+          <button mat-menu-item>09:30 PM</button>
+          <button mat-menu-item>10:00 PM</button>
+          <button mat-menu-item>10:30 PM</button>
+          <button mat-menu-item>11:00 PM</button>
+          <button mat-menu-item>11:30 PM</button>
+        </mat-menu> -->
+        <select>
+          <option value="volvo">Volvo</option>
+          <option value="saab">Saab</option>
+          <option value="opel">Opel</option>
+          <option value="audi">Audi</option>
+          <option value="volvo">Volvo</option>
+          <option value="saab">Saab</option>
+          <option value="opel">Opel</option>
+          <option value="audi">Audi</option>
+          <option value="volvo">Volvo</option>
+          <option value="saab">Saab</option>
+          <option value="opel">Opel</option>
+          <option value="audi">Audi</option>
+          <option value="volvo">Volvo</option>
+          <option value="saab">Saab</option>
+          <option value="opel">Opel</option>
+          <option value="audi">Audi</option>
+          <option value="volvo">Volvo</option>
+          <option value="saab">Saab</option>
+          <option value="opel">Opel</option>
+          <option value="audi">Audi</option>
+          <option value="volvo">Volvo</option>
+          <option value="saab">Saab</option>
+          <option value="opel">Opel</option>
+          <option value="audi">Audi</option>
+          <option value="volvo">Volvo</option>
+          <option value="saab">Saab</option>
+          <option value="opel">Opel</option>
+          <option value="audi">Audi</option>
+          <option value="volvo">Volvo</option>
+          <option value="saab">Saab</option>
+          <option value="opel">Opel</option>
+          <option value="audi">Audi</option>
+        </select>
+      </div>
+      <div class="col-sm-2">
+        <!-- <button id="endTime" mat-button [matMenuTriggerFor]="endTime">End Time</button> -->
+        <!-- <mat-menu #endTime="matMenu" name="EndTime">
+          <button mat-menu-item>12:00 AM</button>
+          <button mat-menu-item>12:30 AM</button>
+          <button mat-menu-item>01:00 AM</button>
+          <button mat-menu-item>01:30 AM</button>
+          <button mat-menu-item>02:00 AM</button>
+          <button mat-menu-item>02:30 AM</button>
+          <button mat-menu-item>03:00 AM</button>
+          <button mat-menu-item>03:30 AM</button>
+          <button mat-menu-item>04:00 AM</button>
+          <button mat-menu-item>04:30 AM</button>
+          <button mat-menu-item>05:00 AM</button>
+          <button mat-menu-item>05:30 AM</button>
+          <button mat-menu-item>06:00 AM</button>
+          <button mat-menu-item>06:30 AM</button>
+          <button mat-menu-item>07:00 AM</button>
+          <button mat-menu-item>07:30 AM</button>
+          <button mat-menu-item>08:00 AM</button>
+          <button mat-menu-item>08:30 AM</button>
+          <button mat-menu-item>09:00 AM</button>
+          <button mat-menu-item>09:30 AM</button>
+          <button mat-menu-item>10:00 AM</button>
+          <button mat-menu-item>10:30 AM</button>
+          <button mat-menu-item>11:00 AM</button>
+          <button mat-menu-item>11:30 AM</button>
+          <button mat-menu-item>12:00 PM</button>
+          <button mat-menu-item>12:30 PM</button>
+          <button mat-menu-item>01:00 PM</button>
+          <button mat-menu-item>01:30 PM</button>
+          <button mat-menu-item>02:00 PM</button>
+          <button mat-menu-item>02:30 PM</button>
+          <button mat-menu-item>03:00 PM</button>
+          <button mat-menu-item>03:30 PM</button>
+          <button mat-menu-item>04:00 PM</button>
+          <button mat-menu-item>04:30 PM</button>
+          <button mat-menu-item>05:00 PM</button>
+          <button mat-menu-item>05:30 PM</button>
+          <button mat-menu-item>06:00 PM</button>
+          <button mat-menu-item>06:30 PM</button>
+          <button mat-menu-item>07:00 PM</button>
+          <button mat-menu-item>07:30 PM</button>
+          <button mat-menu-item>08:00 PM</button>
+          <button mat-menu-item>08:30 PM</button>
+          <button mat-menu-item>09:00 PM</button>
+          <button mat-menu-item>09:30 PM</button>
+          <button mat-menu-item>10:00 PM</button>
+          <button mat-menu-item>10:30 PM</button>
+          <button mat-menu-item>11:00 PM</button>
+          <button mat-menu-item>11:30 PM</button>
+        </mat-menu> -->
+        <select>
+          <option value="volvo">Volvo</option>
+          <option value="saab">Saab</option>
+          <option value="opel">Opel</option>
+          <option value="audi">Audi</option>
+          <option value="volvo">Volvo</option>
+          <option value="saab">Saab</option>
+          <option value="opel">Opel</option>
+          <option value="audi">Audi</option>
+          <option value="volvo">Volvo</option>
+          <option value="saab">Saab</option>
+          <option value="opel">Opel</option>
+          <option value="audi">Audi</option>
+          <option value="volvo">Volvo</option>
+          <option value="saab">Saab</option>
+          <option value="opel">Opel</option>
+          <option value="audi">Audi</option>
+          <option value="volvo">Volvo</option>
+          <option value="saab">Saab</option>
+          <option value="opel">Opel</option>
+          <option value="audi">Audi</option>
+          <option value="volvo">Volvo</option>
+          <option value="saab">Saab</option>
+          <option value="opel">Opel</option>
+          <option value="audi">Audi</option>
+          <option value="volvo">Volvo</option>
+          <option value="saab">Saab</option>
+          <option value="opel">Opel</option>
+          <option value="audi">Audi</option>
+          <option value="volvo">Volvo</option>
+          <option value="saab">Saab</option>
+          <option value="opel">Opel</option>
+          <option value="audi">Audi</option>
+        </select>
+      </div>
+      <div class="col-sm-3">
+        <button mat-button (click)="picker1.open()"><p>{{showDate}}</p></button>
+        <input matInput [matDatepicker]="picker1" [hidden] name="endDate">
+        <mat-datepicker #picker1></mat-datepicker>
+      </div>
+    </div>
+    <!-- Add Guest -->
+    <div class="row">
+      <div class="col-sm-2">
+        <mat-icon aria-label="supervisor_account" class="icon">supervisor_account</mat-icon>
+      </div>
+      <div class="col-sm-10">
+          <!-- <mat-form-field class="example-full-width">
+              <input type="text" placeholder="Pick Guest" aria-label="Number"  matInput [formControl]="myControl" [matAutocomplete]="guest"> -->
+              <select>
+                <option *ngFor="let guest of guestList" value={{guest.email}}>{{guest.email}}</option>
+              </select>
+              <!-- <mat-autocomplete #guest="matAutocomplete">
+                <mat-option *ngFor="let guest of guestList" [value]="option">
+                  {{guest.email}}
+                </mat-option>
+              </mat-autocomplete> -->
+            <!-- </mat-form-field> -->
+      </div>
+    </div>
+
+    <!-- Add Location -->
+    <div class="row">
+      <div class="col-sm-2">
+        <mat-icon aria-label="my_location" class="icon">my_location</mat-icon>
+      </div>
+      <div class="col-sm-10">
+          <mat-form-field class="example-full-width">
+              <input type="text" placeholder="Pick Location" aria-label="Number" matInput [formControl]="myControl" [matAutocomplete]="loc">
+              <mat-autocomplete #loc="matAutocomplete">
+                <mat-option *ngFor="let room of roomList" [value]="option">
+                  {{room.name}}
+                </mat-option>
+              </mat-autocomplete>
+            </mat-form-field>
+        <!-- <mat-form-field appearance="legacy" style="width:100%">
+          <input matInput placeholder="Add Location" name="location">
+        </mat-form-field> -->
+      </div>
+    </div>
+
+    <!-- Add description -->
+
+    <div class="row">
+      <div class="col-sm-2">
+        <mat-icon aria-label="format_align_right" class="icon">format_align_right</mat-icon>
+      </div>
+      <div class="col-sm-10">
+        <mat-form-field appearance="legacy" style="width:100%">
+          <input matInput placeholder="Add description" name="description">
+        </mat-form-field>
+      </div>
+    </div>
+      <button mat-raised-button color="primary" type="submit" style="float: right">Save</button>
+  </form>
+</mat-dialog-content>
